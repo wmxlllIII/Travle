@@ -10,6 +10,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Travle" />
+        android:theme="@style/Theme.Travle">
+        <activity
+            android:name=".ui.fragment.LocalCuisineFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CuisineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AccommodationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.RouteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ScenicSpotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="false" />
+    </application>
 
 </manifest>
