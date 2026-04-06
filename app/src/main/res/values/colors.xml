@@ -7,7 +7,30 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
 
     <color name="navigation_bar">#615F5F</color>
-    <color name="bg_common">#E7DEF1</color>
+    <color name="bg_common">#E7EDF1</color>
+    <color name="tv_common">#615F5F</color>
+
+    <color name="home_primary">#2196F3</color>
+    <color name="home_primary_dark">#1976D2</color>
+    <color name="home_accent">#FF9800</color>
+    <color name="home_bg_gradient_start">#E3F2FD</color>
+    <color name="home_bg_gradient_end">#BBDEFB</color>
+    <color name="home_card_bg">#FFFFFF</color>
+    <color name="home_title_text">#1565C0</color>
+    <color name="home_subtitle_text">#424242</color>
+    <color name="home_search_hint">#9E9E9E</color>
+    <color name="home_func_text">#FFFFFF</color>
+    <color name="home_func_bg_1">#42A5F5</color>
+    <color name="home_func_bg_2">#66BB6A</color>
+    <color name="home_func_bg_3">#FFA726</color>
+    <color name="home_func_bg_4">#EF5350</color>
+    <color name="home_func_bg_5">#AB47BC</color>
+    <color name="home_func_bg_6">#26C6DA</color>
+    <color name="home_func_bg_7">#FFCA28</color>
+    <color name="home_func_bg_8">#8D6E63</color>
+    <color name="home_divider">#E0E0E0</color>
+    <color name="chip_stroke">#E0E0E0</color>
 </resources>

@@ -25,12 +25,6 @@ public class LocalCuisineFragment extends BaseFragment<FragmentLocalCuisineBindi
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return mBinding.getRoot();
-    }
-
-    @Override
     protected FragmentLocalCuisineBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
         return FragmentLocalCuisineBinding.inflate(inflater, container, false);
     }

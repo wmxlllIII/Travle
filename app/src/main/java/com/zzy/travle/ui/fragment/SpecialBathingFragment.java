@@ -21,12 +21,6 @@ public class SpecialBathingFragment extends BaseFragment<FragmentSpecialBathingB
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return mBinding.getRoot();
-    }
-
-    @Override
     protected FragmentSpecialBathingBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
         return FragmentSpecialBathingBinding.inflate(inflater, container, false);
     }

@@ -21,12 +21,6 @@ public class TransportationRouteFragment extends BaseFragment<FragmentTransporta
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return mBinding.getRoot();
-    }
-
-    @Override
     protected FragmentTransportationRouteBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
         return FragmentTransportationRouteBinding.inflate(inflater, container, false);
     }

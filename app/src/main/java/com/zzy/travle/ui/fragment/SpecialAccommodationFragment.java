@@ -21,12 +21,6 @@ public class SpecialAccommodationFragment extends BaseFragment<FragmentSpecialAc
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return mBinding.getRoot();
-    }
-
-    @Override
     protected FragmentSpecialAccommodationBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
         return FragmentSpecialAccommodationBinding.inflate(inflater, container, false);
     }

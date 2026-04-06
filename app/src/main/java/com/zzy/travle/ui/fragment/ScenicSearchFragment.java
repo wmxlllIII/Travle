@@ -19,12 +19,6 @@ public class ScenicSearchFragment extends BaseFragment<FragmentScenicSearchBindi
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return mBinding.getRoot();
-    }
-
-    @Override
     protected FragmentScenicSearchBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
         return FragmentScenicSearchBinding.inflate(inflater, container, false);
     }

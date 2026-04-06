@@ -9,20 +9,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zzy.travle.R;
-import com.zzy.travle.databinding.FragmentTravelGuideBinding;
+import com.zzy.travle.databinding.FragmentMineBinding;
 
-public class TravelGuideFragment extends BaseFragment<FragmentTravelGuideBinding> {
+public class MineFragment extends BaseFragment<FragmentMineBinding> {
 
-    public static final String TAG = "TravelGuideFragment";
+    public static final String TAG = "MineFragment";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+
     @Override
-    protected FragmentTravelGuideBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
-        return FragmentTravelGuideBinding.inflate(inflater, container, false);
+    protected FragmentMineBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
+        return FragmentMineBinding.inflate(inflater, container, false);
     }
 
     @Override

@@ -21,12 +21,6 @@ public class GuideSearchFragment extends BaseFragment<FragmentGuideSearchBinding
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return mBinding.getRoot();
-    }
-
-    @Override
     protected FragmentGuideSearchBinding inflateBinding(LayoutInflater inflater, ViewGroup container) {
         return FragmentGuideSearchBinding.inflate(inflater, container, false);
     }
