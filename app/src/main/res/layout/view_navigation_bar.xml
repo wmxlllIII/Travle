@@ -17,7 +17,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="#00ffff"/>
+                android:src="@mipmap/icon_nav_home"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="#00ffff"/>
+                android:src="@mipmap/icon_nav_scenic"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="#00ffff"/>
+                android:src="@mipmap/icon_nav_route"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="#00ffff"/>
+                android:src="@mipmap/icon_nav_mine"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
