@@ -48,4 +48,6 @@ dependencies {
 
     implementation libs.okhttp.core
     implementation libs.okhttp.logging
+
+    implementation libs.glide
 }

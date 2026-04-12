@@ -10,15 +10,23 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.zzy.travle.data.manager.DataCallback;
+import com.zzy.travle.data.manager.SpotManager;
+import com.zzy.travle.data.model.vo.ScenicSpotVO;
 import com.zzy.travle.databinding.FragmentScenicSpotListBinding;
+import com.zzy.travle.ui.adapter.ScenicSpotListAdapter;
+import com.zzy.travle.ui.adapter.interfaces.OnScenicSpotClickListener;
+
+import java.util.List;
 
 public class ScenicSpotListFragment extends BaseFragment<FragmentScenicSpotListBinding> {
 
     public static final String TAG = "ScenicSpotListFragment";
     private final TabSelectedListener mTabSelectedListener = new TabSelectedListener();
     private final SearchTextWatcher mSearchTextWatcher = new SearchTextWatcher();
-    //todo 缺数据，待实现
-//    private final ScenicSpotListAdapter mScenicSpotListAdapter = new ScenicSpotListAdapter();
+    private final SpotManager spotManager = new SpotManager();
+    private final LoadScenicCallback mLoadScenicCallback = new LoadScenicCallback();
+    private final ScenicSpotListAdapter mScenicSpotListAdapter = new ScenicSpotListAdapter(new OnScenicSpotClickListenerImpl());
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,7 @@ public class ScenicSpotListFragment extends BaseFragment<FragmentScenicSpotListB
     @Override
     protected void initView() {
         mBinding.rvScenicList.setLayoutManager(new LinearLayoutManager(getContext()));
+        mBinding.rvScenicList.setAdapter(mScenicSpotListAdapter);
 
         mBinding.etSearch.addTextChangedListener(mSearchTextWatcher);
 
@@ -61,6 +70,7 @@ public class ScenicSpotListFragment extends BaseFragment<FragmentScenicSpotListB
     }
 
     private void loadScenicList() {
+        spotManager.loadScenicList(mLoadScenicCallback);
     }
 
     private void loadScenicByCategory(int categoryIndex) {
@@ -104,6 +114,32 @@ public class ScenicSpotListFragment extends BaseFragment<FragmentScenicSpotListB
 
         @Override
         public void onTabReselected(TabLayout.Tab tab) {
+
+        }
+    }
+
+    private class OnScenicSpotClickListenerImpl implements OnScenicSpotClickListener {
+
+        @Override
+        public void onScenicSpotClick(int spotId) {
+
+        }
+
+        @Override
+        public void onScenicSpotBookClick(int spotId) {
+
+        }
+    }
+
+    private class LoadScenicCallback implements DataCallback<List<ScenicSpotVO>> {
+
+        @Override
+        public void onSuccess(List<ScenicSpotVO> data) {
+            mScenicSpotListAdapter.submitList(data);
+        }
+
+        @Override
+        public void onError(String error) {
 
         }
     }

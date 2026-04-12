@@ -27,9 +27,9 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:text="惠游沈阳"
                 android:textColor="@color/tv_common"
-                android:layout_marginStart="5dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/iv_location_icon"
@@ -39,8 +39,8 @@
                 android:id="@+id/tv_title_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="山海有情  天辽地宁"
                 android:layout_marginStart="5dp"
+                android:text="山海有情  天辽地宁"
                 android:textColor="@color/tv_common"
                 android:textSize="12dp"
                 android:textStyle="normal"
@@ -110,9 +110,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/ll_search_bar_zone"
+            android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:fillViewport="true">
+            app:layout_constraintTop_toBottomOf="@id/ll_search_bar_zone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,198 +122,208 @@
                 <ImageView
                     android:id="@+id/iv_cover"
                     android:layout_width="match_parent"
+                    android:layout_height="200dp"
                     android:layout_marginTop="12dp"
                     android:scaleType="centerCrop"
                     android:src="@color/white"
-                    app:layout_constraintDimensionRatio="16:9"
-                    android:layout_height="200dp" />
+                    app:layout_constraintDimensionRatio="16:9" />
 
                 <LinearLayout
-                    android:id="@+id/ll_func_zone"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:paddingVertical="10dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_impression" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="沈阳印象"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_strategy" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="旅游攻略"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_route" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="热门路线"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_shower" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="汤泉洗浴"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-                    </LinearLayout>
+                    android:layout_marginTop="12dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/bg_top_rounded">
 
                     <LinearLayout
+                        android:id="@+id/ll_func_zone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp">
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_scenic" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="热门景区"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_impression" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="沈阳印象"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_strategy" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="旅游攻略"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_route" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="热门路线"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_shower" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="汤泉洗浴"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                            android:layout_marginTop="5dp">
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_hotel" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="酒店住宿"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
-                        </LinearLayout>
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_scenic" />
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_food" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="热门景区"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="美食娱乐"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
-                        </LinearLayout>
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_hotel" />
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:src="@mipmap/icon_more" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="酒店住宿"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="更多"
-                                android:textColor="@color/white"
-                                android:textSize="16dp" />
-                        </LinearLayout>
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
 
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_food" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="美食娱乐"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@mipmap/icon_more" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="更多"
+                                    android:textColor="@color/tv_common"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
                     </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_recom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:nestedScrollingEnabled="false" />
+
                 </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_recom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"
-                    android:layout_marginTop="12dp" />
 
             </LinearLayout>
 
