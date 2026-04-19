@@ -17,6 +17,7 @@ import com.zzy.travle.data.model.vo.WeatherVO;
 import com.zzy.travle.databinding.FragmentHomeBinding;
 import com.zzy.travle.ui.activity.ImpressionActivity;
 import com.zzy.travle.ui.activity.SearchActivity;
+import com.zzy.travle.ui.activity.StrategyActivity;
 import com.zzy.travle.util.TravleToast;
 
 import java.util.List;
@@ -47,6 +48,11 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
         mBinding.rvRecom.setLayoutManager(new LinearLayoutManager(getContext()));
         mBinding.llImpression.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), ImpressionActivity.class);
+            startActivity(intent);
+        });
+
+        mBinding.llStrategy.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), StrategyActivity.class);
             startActivity(intent);
         });
 
