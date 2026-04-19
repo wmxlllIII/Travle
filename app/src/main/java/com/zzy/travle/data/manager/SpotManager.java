@@ -46,9 +46,23 @@ public class SpotManager {
         });
     }
 
-    public void loadWeather(DataCallback<WeatherVO> callback){
+    public void loadWeather(DataCallback<WeatherVO> callback) {
         ThreadPoolProvider.getInstance().execute(() -> {
             Result<WeatherVO> result = homeRepository.getWeather();
+
+            mHandler.post(() -> {
+                if (result.isSuccess()) {
+                    callback.onSuccess(result.getData());
+                } else {
+                    callback.onError(result.getError());
+                }
+            });
+        });
+    }
+
+    public void searchSpotByKeyword(String keyword, DataCallback<List<ScenicSpotVO>> callback) {
+        ThreadPoolProvider.getInstance().execute(() -> {
+            Result<List<ScenicSpotVO>> result = homeRepository.searchScenicSpot(keyword);
 
             mHandler.post(() -> {
                 if (result.isSuccess()) {

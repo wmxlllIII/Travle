@@ -14,4 +14,6 @@ public interface SpotRepository {
     Result<List<ScenicSpotVO>> getScenicSpot();
 
     Result<WeatherVO> getWeather();
+
+    Result<List<ScenicSpotVO>> searchScenicSpot(String keyword);
 }

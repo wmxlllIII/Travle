@@ -10,12 +10,19 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.zzy.travle.R;
+import com.zzy.travle.data.manager.DataCallback;
+import com.zzy.travle.data.manager.SpotManager;
+import com.zzy.travle.data.model.vo.ScenicSpotVO;
 import com.zzy.travle.databinding.ActivitySearchBinding;
+
+import java.util.List;
 
 public class SearchActivity extends BaseActivity<ActivitySearchBinding> {
 
     public static final String TAG = "SearchActivity";
     private final SearchTextWatcher mSearchTextWatcher = new SearchTextWatcher();
+    private final SpotManager mSpotManager = new SpotManager();
+    private final SearchCallback mSearchCallback = new SearchCallback();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +71,7 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> {
     }
 
     private void performSearch(String keyword) {
+        mSpotManager.searchSpotByKeyword(keyword, mSearchCallback);
         if (!isChipExists(mBinding.chipGroupHistory, keyword)) {
             addChipToGroup(mBinding.chipGroupHistory, keyword, true);
         }
@@ -136,6 +144,19 @@ public class SearchActivity extends BaseActivity<ActivitySearchBinding> {
 
         @Override
         public void afterTextChanged(Editable editable) {
+
+        }
+    }
+
+    private class SearchCallback implements DataCallback<List<ScenicSpotVO>> {
+
+        @Override
+        public void onSuccess(List<ScenicSpotVO> data) {
+
+        }
+
+        @Override
+        public void onError(String error) {
 
         }
     }

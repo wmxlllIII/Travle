@@ -26,7 +26,7 @@ public class NetworkHelper {
             Response<ApiResponse<T>> response = apiCall.execute().execute();
             if (response.isSuccessful() && response.body() != null) {
                 ApiResponse<T> apiResponse = response.body();
-                if (apiResponse.isSuccess()) {
+                if (apiResponse.isSuccess() && apiResponse.getData() != null) {
                     return Result.success(apiResponse.getData());
                 } else {
                     return Result.error(apiResponse.getMsg());

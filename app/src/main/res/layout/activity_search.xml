@@ -115,27 +115,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         app:singleLine="false">
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="沈阳故宫"
-                            android:textSize="14sp" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="中街"
-                            android:textSize="14sp" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="北陵公园"
-                            android:textSize="14sp" />
                     </com.google.android.material.chip.ChipGroup>
                 </LinearLayout>
 
@@ -161,41 +140,7 @@
                         android:layout_marginTop="10dp"
                         app:singleLine="false">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="张学良旧居"
-                            android:textSize="14sp"
-                            app:rippleColor="@android:color/transparent"/>
-.
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="刘老根大舞台"
-                            android:textSize="14sp" />
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="太原街"
-                            android:textSize="14sp" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="清河半岛"
-                            android:textSize="14sp" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="西塔美食街"
-                            android:textSize="14sp" />
                     </com.google.android.material.chip.ChipGroup>
                 </LinearLayout>
 

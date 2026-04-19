@@ -5,6 +5,7 @@ import android.util.Log;
 import com.zzy.travle.data.constant.Constants;
 import com.zzy.travle.data.model.mapper.SpotMapper;
 import com.zzy.travle.data.model.mapper.WeatherMapper;
+import com.zzy.travle.data.model.reqdto.SearchSpotReqDTO;
 import com.zzy.travle.data.model.respdto.HomeDataRespDto;
 import com.zzy.travle.data.model.respdto.ScenicSpotListRespDto;
 import com.zzy.travle.data.model.respdto.WeatherRespDto;
@@ -18,6 +19,7 @@ import com.zzy.travle.data.remote.network.NetworkHelper;
 import com.zzy.travle.data.remote.network.RetrofitFactory;
 import com.zzy.travle.data.repository.interfaces.SpotRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpotRepositoryImpl implements SpotRepository {
@@ -32,7 +34,7 @@ public class SpotRepositoryImpl implements SpotRepository {
     public Result<HomeDataVO> getHomeData() {
         Result<HomeDataRespDto> result = NetworkHelper.executeCall(spotApi::getHomeData);
 
-        if (result.isSuccess() && result.getData() != null) {
+        if (result.isSuccess()) {
             HomeDataRespDto dto = result.getData();
             HomeDataVO vo = new HomeDataVO(mapper.mapRecommendationListDOToVO(dto.getRecommendations()));
             return Result.success(vo);
@@ -44,9 +46,9 @@ public class SpotRepositoryImpl implements SpotRepository {
     @Override
     public Result<List<ScenicSpotVO>> getScenicSpot() {
         Result<ScenicSpotListRespDto> result = NetworkHelper.executeCall(spotApi::getScenicSpotList);
-        Log.d(TAG, "[t] getScenicSpot #47"+result);
+        Log.d(TAG, "[t] getScenicSpot #47" + result);
 
-        if (result.isSuccess() && result.getData() != null) {
+        if (result.isSuccess()) {
             ScenicSpotListRespDto dto = result.getData();
             List<ScenicSpotVO> voList = mapper.mapScenicSpotListDOToVO(dto.getSpots());
             return Result.success(voList);
@@ -66,7 +68,7 @@ public class SpotRepositoryImpl implements SpotRepository {
                 )
         );
 
-        if (result.isSuccess() && result.getData() != null) {
+        if (result.isSuccess()) {
             WeatherRespDto dto = result.getData();
             if ("1".equals(dto.getStatus())) {
                 WeatherVO vo = weatherMapper.mapWeatherToVO(dto);
@@ -81,5 +83,25 @@ public class SpotRepositoryImpl implements SpotRepository {
         } else {
             return Result.error(result.getError());
         }
+    }
+
+    @Override
+    public Result<List<ScenicSpotVO>> searchScenicSpot(String keyword) {
+        SearchSpotReqDTO reqDTO = new SearchSpotReqDTO();
+        reqDTO.setKeyword(keyword);
+
+        Result<ScenicSpotListRespDto> result = NetworkHelper.executeCall(() -> spotApi.searchSpot(reqDTO));
+
+        if (!result.isSuccess()) {
+            return Result.error(result.getError());
+        }
+
+        ScenicSpotListRespDto dto = result.getData();
+        if (dto == null || dto.getSpots() == null) {
+            return Result.success(new ArrayList<>());
+        }
+
+        List<ScenicSpotVO> voList = mapper.mapScenicSpotListDOToVO(dto.getSpots());
+        return Result.success(voList);
     }
 }
