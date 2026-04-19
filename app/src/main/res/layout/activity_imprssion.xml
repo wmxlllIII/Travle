@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_title_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="12dp">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/icon_back"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="沈阳印象"
+                    android:textColor="@color/tv_common"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/iv_back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="10dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_banner" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="山海有情 天辽地宁"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tv_common" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="辽宁省省会 · 国家历史文化名城"
+                    android:textSize="14dp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="8dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="城市简介"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tv_common" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="沈阳，简称'沈'，别称盛京、奉天，是辽宁省省会、副省级市、特大城市、沈阳都市圈核心城市。沈阳位于中国东北地区南部，地处东北亚经济圈和环渤海经济圈的中心。\n\n沈阳是国家历史文化名城，有'一朝发祥地，两代帝王都'之称。拥有2300多年的建城史，素有'千年古都'之美誉。作为清王朝的发祥地，沈阳故宫是中国仅存的两大宫殿建筑群之一。"
+                    android:textSize="15dp"
+                    android:textColor="#333333"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_marginTop="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="城市特色"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tv_common"
+                    android:layout_marginTop="25dp" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@mipmap/icon_scenic" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="历史古迹"
+                            android:textSize="15dp"
+                            android:textColor="@color/tv_common"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="沈阳故宫\n张氏帅府"
+                            android:textSize="12dp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@mipmap/icon_food" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="美食之都"
+                            android:textSize="15dp"
+                            android:textColor="@color/tv_common"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="老边饺子\n李连贵熏肉"
+                            android:textSize="12dp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@mipmap/icon_shower" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="温泉文化"
+                            android:textSize="15dp"
+                            android:textColor="@color/tv_common"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="清河半岛\n北汤温泉"
+                            android:textSize="12dp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@mipmap/icon_route" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="工业文明"
+                            android:textSize="15dp"
+                            android:textColor="@color/tv_common"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="中国工业博物馆\n铁西1905"
+                            android:textSize="12dp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp" />
+                    </LinearLayout>
+
+                </GridLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="必游景点"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tv_common"
+                    android:layout_marginTop="25dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/icon_banner"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/bg_top_rounded" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="沈阳故宫"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/tv_common" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="中国现存两大宫殿建筑群之一"
+                                android:textSize="13dp"
+                                android:textColor="#666666"
+                                android:layout_marginTop="5dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="★★★★★  5A级景区"
+                                android:textSize="12dp"
+                                android:textColor="#FF6B35"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/icon_banner"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/bg_top_rounded" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="张氏帅府"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/tv_common" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="东北第一宅，民国历史见证"
+                                android:textSize="13dp"
+                                android:textColor="#666666"
+                                android:layout_marginTop="5dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="★★★★☆  4A级景区"
+                                android:textSize="12dp"
+                                android:textColor="#FF6B35"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:background="@drawable/bg_func_item">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/icon_banner"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/bg_top_rounded" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="北陵公园"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/tv_common" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="清昭陵，世界文化遗产"
+                                android:textSize="13dp"
+                                android:textColor="#666666"
+                                android:layout_marginTop="5dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="★★★★★  5A级景区"
+                                android:textSize="12dp"
+                                android:textColor="#FF6B35"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最佳旅游时间"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tv_common"
+                    android:layout_marginTop="25dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="春秋两季（4-6月、9-10月）是沈阳的最佳旅游季节。此时气候宜人，景色优美，非常适合户外游览。冬季可以体验冰雪文化，欣赏冰灯雪雕；夏季凉爽舒适，是避暑的好去处。"
+                    android:textSize="15dp"
+                    android:textColor="#333333"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_marginTop="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="交通指南"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tv_common"
+                    android:layout_marginTop="25dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="✈️ 飞机：沈阳桃仙国际机场，距市区20公里"
+                        android:textSize="14dp"
+                        android:textColor="#333333"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🚄 高铁：沈阳站、沈阳北站、沈阳南站"
+                        android:textSize="14dp"
+                        android:textColor="#333333"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_func_item"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🚇 地铁：已开通1、2、4、9、10号线"
+                        android:textSize="14dp"
+                        android:textColor="#333333"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_func_item" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

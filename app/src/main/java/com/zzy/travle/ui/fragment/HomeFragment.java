@@ -15,6 +15,7 @@ import com.zzy.travle.data.model.vo.HomeDataVO;
 import com.zzy.travle.data.model.vo.RecommendationItemVO;
 import com.zzy.travle.data.model.vo.WeatherVO;
 import com.zzy.travle.databinding.FragmentHomeBinding;
+import com.zzy.travle.ui.activity.ImpressionActivity;
 import com.zzy.travle.ui.activity.SearchActivity;
 import com.zzy.travle.util.TravleToast;
 
@@ -44,6 +45,10 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
             startActivity(intent);
         });
         mBinding.rvRecom.setLayoutManager(new LinearLayoutManager(getContext()));
+        mBinding.llImpression.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ImpressionActivity.class);
+            startActivity(intent);
+        });
 
     }
 
@@ -84,8 +89,8 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
 
     }
 
-    private void handleError(String error) {
-        Log.d(TAG, "[x] handleError "+error);
+    private void handleError(String error, String tag) {
+        Log.d(TAG, "[x] handleError " + tag + error);
         hideLoading();
 //        TravleToast.showToast(getContext(), error);
     }
@@ -104,7 +109,7 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
         public void onSuccess(HomeDataVO homeData) {
             if (homeData == null) {
                 Log.d(TAG, "[x] HomeDataCallback #115");
-                handleError("数据为空");
+                handleError("数据为空", "#107");
                 return;
             }
 
@@ -113,7 +118,7 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
 
         @Override
         public void onError(String error) {
-            handleError(error);
+            handleError(error, "#116");
         }
     }
 
@@ -126,7 +131,7 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
 
         @Override
         public void onError(String error) {
-            handleError(error);
+            handleError(error, "#129");
         }
     }
 
