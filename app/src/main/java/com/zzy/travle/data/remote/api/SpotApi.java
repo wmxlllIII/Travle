@@ -17,9 +17,6 @@ public interface SpotApi {
     @GET("/spot/list")
     Call<ApiResponse<ScenicSpotListRespDto>> getScenicSpotList();
 
-    @GET("")
-    Call<ApiResponse<ScenicSpotListRespDto>> getWeather();
-
     @POST("/spot/search")
     Call<ApiResponse<ScenicSpotListRespDto>> searchSpot(SearchSpotReqDTO reqDTO);
 

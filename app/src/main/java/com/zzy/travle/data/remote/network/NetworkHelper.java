@@ -47,7 +47,9 @@ public class NetworkHelper {
         try {
             Response<T> response = apiCall.execute().execute();
             if (response.isSuccessful() && response.body() != null) {
-                return Result.success(response.body());
+                T body = response.body();
+                Log.d(TAG, "[test] response.body(): "+body);
+                return Result.success(body);
             } else {
                 return Result.error("网络请求失败: " + response.code());
             }

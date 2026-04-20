@@ -9,21 +9,31 @@ public class WeatherMapper {
     public static final String TAG = "WeatherMapper";
 
     public WeatherVO mapWeatherToVO(WeatherRespDto respDto) {
-        if (respDto == null || respDto.getLives() == null || respDto.getLives().length == 0) {
-            Log.d(TAG, "[x] mapWeatherToVO #13");
+        if (respDto == null || respDto.getForecasts() == null || respDto.getForecasts().isEmpty()) {
+            Log.d(TAG, "[x] 天气数据为空");
             return null;
         }
 
-        WeatherRespDto.LifeItem life = respDto.getLives()[0];
+        // 第一个城市预报
+        WeatherRespDto.Forecast forecast = respDto.getForecasts().get(0);
+        if (forecast.getCasts() == null || forecast.getCasts().isEmpty()) {
+            return null;
+        }
 
-        int currentTemp = parseIntSafe(life.getTemperature());
+        // 今日天气
+        WeatherRespDto.Cast today = forecast.getCasts().get(0);
+
+        // 温度解析
+        int maxTemp = parseIntSafe(today.getDaytemp());
+        int minTemp = parseIntSafe(today.getNighttemp());
+        int currentTemp = minTemp; // 没有实时温度就用最低温（你也可以自己处理）
 
         return new WeatherVO(
-                life.getCity(),
+                forecast.getCity(),
                 currentTemp,
-                currentTemp,
-                currentTemp,
-                life.getWeather(),
+                maxTemp,
+                minTemp,
+                today.getDayweather(),
                 ""
         );
     }

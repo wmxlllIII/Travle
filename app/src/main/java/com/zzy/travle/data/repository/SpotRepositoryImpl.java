@@ -66,7 +66,7 @@ public class SpotRepositoryImpl implements SpotRepository {
         Result<WeatherRespDto> result = NetworkHelper.executeExternalCall(() ->
                 weatherApi.getWeatherInfo(
                         Constants.SHENYANG_CITY_CODE,
-                        "base",
+                        "all",
                         "JSON",
                         Constants.AMAP_WEATHER_KEY
                 )
