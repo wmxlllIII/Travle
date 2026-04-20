@@ -5,6 +5,7 @@ import android.os.Looper;
 
 import com.zzy.travle.data.model.vo.HomeDataVO;
 import com.zzy.travle.data.model.vo.ScenicSpotVO;
+import com.zzy.travle.data.model.vo.StrategyVO;
 import com.zzy.travle.data.model.vo.WeatherVO;
 import com.zzy.travle.data.remote.common.Result;
 import com.zzy.travle.data.repository.SpotRepositoryImpl;
@@ -16,11 +17,11 @@ public class SpotManager {
 
     public static final String TAG = "HomeManager";
     private final Handler mHandler = new Handler(Looper.getMainLooper());
-    private final SpotRepositoryImpl homeRepository = new SpotRepositoryImpl();
+    private final SpotRepositoryImpl spotRepository = new SpotRepositoryImpl();
 
     public void loadHomeData(DataCallback<HomeDataVO> callback) {
         ThreadPoolProvider.getInstance().execute(() -> {
-            Result<HomeDataVO> result = homeRepository.getHomeData();
+            Result<HomeDataVO> result = spotRepository.getHomeData();
 
             mHandler.post(() -> {
                 if (result.isSuccess()) {
@@ -34,7 +35,7 @@ public class SpotManager {
 
     public void loadScenicList(DataCallback<List<ScenicSpotVO>> callback) {
         ThreadPoolProvider.getInstance().execute(() -> {
-            Result<List<ScenicSpotVO>> result = homeRepository.getScenicSpot();
+            Result<List<ScenicSpotVO>> result = spotRepository.getScenicSpot();
 
             mHandler.post(() -> {
                 if (result.isSuccess()) {
@@ -48,7 +49,7 @@ public class SpotManager {
 
     public void loadWeather(DataCallback<WeatherVO> callback) {
         ThreadPoolProvider.getInstance().execute(() -> {
-            Result<WeatherVO> result = homeRepository.getWeather();
+            Result<WeatherVO> result = spotRepository.getWeather();
 
             mHandler.post(() -> {
                 if (result.isSuccess()) {
@@ -62,7 +63,7 @@ public class SpotManager {
 
     public void searchSpotByKeyword(String keyword, DataCallback<List<ScenicSpotVO>> callback) {
         ThreadPoolProvider.getInstance().execute(() -> {
-            Result<List<ScenicSpotVO>> result = homeRepository.searchScenicSpot(keyword);
+            Result<List<ScenicSpotVO>> result = spotRepository.searchScenicSpot(keyword);
 
             mHandler.post(() -> {
                 if (result.isSuccess()) {
@@ -73,4 +74,11 @@ public class SpotManager {
             });
         });
     }
+
+    public void loadStrategy(DataCallback<List<StrategyVO>> callback) {
+        ThreadPoolProvider.getInstance().execute(() -> {
+
+        });
+    }
+
 }
