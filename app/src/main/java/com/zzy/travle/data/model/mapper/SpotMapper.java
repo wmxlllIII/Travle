@@ -46,10 +46,6 @@ public class SpotMapper {
     public ScenicSpotVO mapScenicSpotDOToVO(ScenicSpotDo scenicSpotDo) {
         if (scenicSpotDo == null) {
             Log.d(TAG, "[x] mapScenicSpotDOToVO #44");
-
-
-
-
             return null;
         }
 
