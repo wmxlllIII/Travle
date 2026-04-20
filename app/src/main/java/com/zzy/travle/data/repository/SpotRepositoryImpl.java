@@ -4,13 +4,16 @@ import android.util.Log;
 
 import com.zzy.travle.data.constant.Constants;
 import com.zzy.travle.data.model.mapper.SpotMapper;
+import com.zzy.travle.data.model.mapper.StrategyMapper;
 import com.zzy.travle.data.model.mapper.WeatherMapper;
 import com.zzy.travle.data.model.reqdto.SearchSpotReqDTO;
 import com.zzy.travle.data.model.respdto.HomeDataRespDto;
 import com.zzy.travle.data.model.respdto.ScenicSpotListRespDto;
+import com.zzy.travle.data.model.respdto.StrategyListRespDto;
 import com.zzy.travle.data.model.respdto.WeatherRespDto;
 import com.zzy.travle.data.model.vo.HomeDataVO;
 import com.zzy.travle.data.model.vo.ScenicSpotVO;
+import com.zzy.travle.data.model.vo.StrategyVO;
 import com.zzy.travle.data.model.vo.WeatherVO;
 import com.zzy.travle.data.remote.api.SpotApi;
 import com.zzy.travle.data.remote.api.WeatherApi;
@@ -27,7 +30,8 @@ public class SpotRepositoryImpl implements SpotRepository {
     public static final String TAG = "SpotRepositoryImpl";
     private final SpotApi spotApi = RetrofitFactory.get().create(SpotApi.class);
     private final WeatherApi weatherApi = RetrofitFactory.getWeather().create(WeatherApi.class);
-    private final SpotMapper mapper = new SpotMapper();
+    private final SpotMapper spotMapper = new SpotMapper();
+    private final StrategyMapper strategyMapper = new StrategyMapper();
     private final WeatherMapper weatherMapper = new WeatherMapper();
 
     @Override
@@ -36,7 +40,7 @@ public class SpotRepositoryImpl implements SpotRepository {
 
         if (result.isSuccess()) {
             HomeDataRespDto dto = result.getData();
-            HomeDataVO vo = new HomeDataVO(mapper.mapRecommendationListDOToVO(dto.getRecommendations()));
+            HomeDataVO vo = new HomeDataVO(spotMapper.mapRecommendationListDOToVO(dto.getRecommendations()));
             return Result.success(vo);
         } else {
             return Result.error(result.getError());
@@ -50,7 +54,7 @@ public class SpotRepositoryImpl implements SpotRepository {
 
         if (result.isSuccess()) {
             ScenicSpotListRespDto dto = result.getData();
-            List<ScenicSpotVO> voList = mapper.mapScenicSpotListDOToVO(dto.getSpots());
+            List<ScenicSpotVO> voList = spotMapper.mapScenicSpotListDOToVO(dto.getSpots());
             return Result.success(voList);
         } else {
             return Result.error(result.getError());
@@ -101,7 +105,27 @@ public class SpotRepositoryImpl implements SpotRepository {
             return Result.success(new ArrayList<>());
         }
 
-        List<ScenicSpotVO> voList = mapper.mapScenicSpotListDOToVO(dto.getSpots());
+        List<ScenicSpotVO> voList = spotMapper.mapScenicSpotListDOToVO(dto.getSpots());
+        return Result.success(voList);
+    }
+
+    @Override
+    public Result<List<StrategyVO>> getStrategyList() {
+        Result<StrategyListRespDto> result =
+                NetworkHelper.executeCall(spotApi::getStrategyList);
+
+        if (!result.isSuccess()) {
+            return Result.error(result.getError());
+        }
+
+        StrategyListRespDto dto = result.getData();
+
+        if (dto == null || dto.getList() == null) {
+            return Result.success(new ArrayList<>());
+        }
+
+        List<StrategyVO> voList = strategyMapper.mapList(dto.getList());
+
         return Result.success(voList);
     }
 }

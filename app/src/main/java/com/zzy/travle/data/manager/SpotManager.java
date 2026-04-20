@@ -77,6 +77,15 @@ public class SpotManager {
 
     public void loadStrategy(DataCallback<List<StrategyVO>> callback) {
         ThreadPoolProvider.getInstance().execute(() -> {
+            Result<List<StrategyVO>> result = spotRepository.getStrategyList();
+
+            mHandler.post(() -> {
+                if (result.isSuccess()) {
+                    callback.onSuccess(result.getData());
+                } else {
+                    callback.onError(result.getError());
+                }
+            });
 
         });
     }

@@ -2,6 +2,7 @@ package com.zzy.travle.data.repository.interfaces;
 
 import com.zzy.travle.data.model.vo.HomeDataVO;
 import com.zzy.travle.data.model.vo.ScenicSpotVO;
+import com.zzy.travle.data.model.vo.StrategyVO;
 import com.zzy.travle.data.model.vo.WeatherVO;
 import com.zzy.travle.data.remote.common.Result;
 
@@ -16,4 +17,6 @@ public interface SpotRepository {
     Result<WeatherVO> getWeather();
 
     Result<List<ScenicSpotVO>> searchScenicSpot(String keyword);
+
+    Result<List<StrategyVO>> getStrategyList();
 }

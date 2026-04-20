@@ -8,7 +8,7 @@ import com.zzy.travle.databinding.ItemStrategyBinding;
 import com.zzy.travle.ui.adapter.interfaces.OnStrategyClickListener;
 
 public class StrategyViewHolder extends RecyclerView.ViewHolder {
-    private ItemStrategyBinding mBinding;
+    private final ItemStrategyBinding mBinding;
 
     public StrategyViewHolder(ItemStrategyBinding binding) {
         super(binding.getRoot());
@@ -40,7 +40,6 @@ public class StrategyViewHolder extends RecyclerView.ViewHolder {
         mBinding.tvComment.setText("💬 " + vo.getCommentCount());
         mBinding.tvCollect.setText("⭐ " + vo.getCollectCount());
 
-        // ===== 点击 =====
         mBinding.getRoot().setOnClickListener(v -> {
             if (mListener != null) {
                 //todo
