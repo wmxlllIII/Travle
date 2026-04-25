@@ -14,4 +14,11 @@ public class StrategyListRespDto {
     public void setList(List<StrategyDo> list) {
         this.list = list;
     }
+
+    @Override
+    public String toString() {
+        return "StrategyListRespDto{" +
+                "list=" + list +
+                '}';
+    }
 }
