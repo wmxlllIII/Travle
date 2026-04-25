@@ -80,7 +80,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:padding="15dp" />
+            android:padding="15dp"
+            tools:listitem="@layout/item_strategy"/>
 
 
     </LinearLayout>

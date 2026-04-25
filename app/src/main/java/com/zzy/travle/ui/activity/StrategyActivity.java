@@ -1,5 +1,6 @@
 package com.zzy.travle.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,13 +35,13 @@ public class StrategyActivity extends BaseActivity<ActivityStrategyBinding> {
 
     @Override
     protected void initView() {
-        super.initView();
         mBinding.rvStrategyList.setLayoutManager(new LinearLayoutManager(this));
         mBinding.rvStrategyList.setAdapter(mAdapter);
 
         mBinding.ivBack.setOnClickListener(v -> finish());
         mBinding.ivPublish.setOnClickListener(v -> {
-            TravleToast.showToast(this, "发布功能待实现");
+            Intent intent = new Intent(this, StrategyPublishActivity.class);
+            startActivity(intent);
         });
     }
 

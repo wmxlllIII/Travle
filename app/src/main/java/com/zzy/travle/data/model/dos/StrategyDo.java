@@ -10,7 +10,7 @@ public class StrategyDo {
     private List<String> images;
     private String userName;
     private String userAvatar;
-    private String publishTime;
+    private long publishTime;
     private List<String> tags;
     private int likeCount;
     private int commentCount;
@@ -72,11 +72,11 @@ public class StrategyDo {
         this.userAvatar = userAvatar;
     }
 
-    public String getPublishTime() {
+    public long getPublishTime() {
         return publishTime;
     }
 
-    public void setPublishTime(String publishTime) {
+    public void setPublishTime(long publishTime) {
         this.publishTime = publishTime;
     }
 

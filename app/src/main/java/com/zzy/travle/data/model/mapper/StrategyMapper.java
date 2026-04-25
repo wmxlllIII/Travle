@@ -2,6 +2,7 @@ package com.zzy.travle.data.model.mapper;
 
 import com.zzy.travle.data.model.dos.StrategyDo;
 import com.zzy.travle.data.model.vo.StrategyVO;
+import com.zzy.travle.util.TimeFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class StrategyMapper {
             vo.setImageUrls(dto.getImages());
             vo.setTags(dto.getTags());
 
-            vo.setPublishTime(dto.getPublishTime());
+            vo.setPublishTime(TimeFormatter.formatRelativeTimeText(dto.getPublishTime()));
 
             vo.setLikeCount(dto.getLikeCount());
             vo.setCommentCount(dto.getCommentCount());

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Travle">
         <activity
+            android:name=".ui.activity.StrategyPublishActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.StrategyActivity"
             android:exported="false" />
         <activity

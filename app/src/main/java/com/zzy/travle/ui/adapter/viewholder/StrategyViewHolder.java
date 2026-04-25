@@ -3,9 +3,13 @@ package com.zzy.travle.ui.adapter.viewholder;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.zzy.travle.data.model.vo.StrategyVO;
 import com.zzy.travle.databinding.ItemStrategyBinding;
 import com.zzy.travle.ui.adapter.interfaces.OnStrategyClickListener;
+import com.zzy.travle.util.TimeFormatter;
+
+import java.util.Optional;
 
 public class StrategyViewHolder extends RecyclerView.ViewHolder {
     private final ItemStrategyBinding mBinding;
@@ -21,20 +25,25 @@ public class StrategyViewHolder extends RecyclerView.ViewHolder {
 
         Glide.with(mBinding.ivAvatar.getContext())
                 .load(vo.getUserAvatar())
+                .transform(new RoundedCorners(12))
                 .into(mBinding.ivAvatar);
 
         mBinding.tvTitle.setText(vo.getTitle());
         mBinding.tvSummary.setText(vo.getSummary());
 
-        Glide.with(mBinding.ivCover.getContext())
-                .load(vo.getImageUrls().get(0))
+        Glide.with(mBinding.ivCover)
+                .load(
+                        Optional.ofNullable(vo.getImageUrls())
+                                .map(list -> list.get(0))
+                                .orElse("")
+                )
                 .into(mBinding.ivCover);
 
-        StringBuilder tagBuilder = new StringBuilder();
-        for (String tag : vo.getTags()) {
-            tagBuilder.append("#").append(tag).append(" ");
-        }
-        mBinding.tvTags.setText(tagBuilder.toString().trim());
+//        StringBuilder tagBuilder = new StringBuilder();
+//        for (String tag : vo.getTags()) {
+//            tagBuilder.append("#").append(tag).append(" ");
+//        }
+//        mBinding.tvTags.setText(tagBuilder.toString().trim());
 
         mBinding.tvLike.setText("❤️ " + vo.getLikeCount());
         mBinding.tvComment.setText("💬 " + vo.getCommentCount());
