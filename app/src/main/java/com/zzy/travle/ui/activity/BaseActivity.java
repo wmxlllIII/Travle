@@ -53,6 +53,7 @@ public abstract class BaseActivity<T extends ViewDataBinding>
         super.onDestroy();
         if (mBinding != null) {
             mBinding.unbind();
+            mBinding = null;
         }
     }
 }

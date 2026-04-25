@@ -8,8 +8,15 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ThreadPoolProvider {
-    private static volatile ThreadPoolProvider instance;
     private final ThreadPoolExecutor executor;
+
+    private static class ThreadPoolProviderHolder {
+        private static final ThreadPoolProvider INSTANCE = new ThreadPoolProvider();
+    }
+
+    public static ThreadPoolProvider getInstance() {
+        return ThreadPoolProviderHolder.INSTANCE;
+    }
 
     private ThreadPoolProvider() {
         executor = new ThreadPoolExecutor(
@@ -21,18 +28,6 @@ public class ThreadPoolProvider {
                 Executors.defaultThreadFactory(),
                 new ThreadPoolExecutor.DiscardOldestPolicy()
         );
-    }
-
-
-    public static ThreadPoolProvider getInstance() {
-        if (instance == null) {
-            synchronized (ThreadPoolProvider.class) {
-                if (instance == null) {
-                    instance = new ThreadPoolProvider();
-                }
-            }
-        }
-        return instance;
     }
 
     public void execute(Runnable task) {
