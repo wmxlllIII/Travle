@@ -12,7 +12,6 @@ import com.zzy.travle.data.model.vo.StrategyVO;
 import com.zzy.travle.databinding.ActivityStrategyBinding;
 import com.zzy.travle.ui.adapter.StrategyAdapter;
 import com.zzy.travle.ui.adapter.interfaces.OnStrategyClickListener;
-import com.zzy.travle.util.TravleToast;
 
 import java.util.List;
 

@@ -18,7 +18,6 @@ import com.zzy.travle.databinding.FragmentHomeBinding;
 import com.zzy.travle.ui.activity.ImpressionActivity;
 import com.zzy.travle.ui.activity.SearchActivity;
 import com.zzy.travle.ui.activity.StrategyActivity;
-import com.zzy.travle.util.TravleToast;
 
 import java.util.List;
 

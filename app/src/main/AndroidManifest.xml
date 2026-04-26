@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".util.TravleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/icon_app"
         android:label="@string/app_name"
@@ -13,41 +14,61 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Travle">
         <activity
-            android:name=".ui.activity.StrategyPublishActivity"
+            android:name=".ui.activity.AboutActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.activity.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MyFavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.StrategyPublishActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.StrategyActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.ImpressionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.CuisineActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.AccommodationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.SearchActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.RouteActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.ScenicSpotActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.BaseActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

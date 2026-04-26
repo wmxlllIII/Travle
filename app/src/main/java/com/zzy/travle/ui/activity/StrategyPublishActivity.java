@@ -14,7 +14,7 @@ import com.zzy.travle.data.model.vo.ScenicSpotVO;
 import com.zzy.travle.databinding.ActivityStrategyPublishBinding;
 import com.zzy.travle.ui.adapter.ImagePickerAdapter;
 import com.zzy.travle.ui.adapter.interfaces.OnPickerClickListener;
-import com.zzy.travle.util.TravleToast;
+import com.zzy.travle.util.TravelToast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +67,7 @@ public class StrategyPublishActivity extends BaseActivity<ActivityStrategyPublis
     // 选择图片
     private void pickImage() {
         if (mImageAdapter.getItemCount() >= MAX_IMAGE_COUNT) {
-            TravleToast.showToast(this, "最多上传9张图片");
+            TravelToast.showToast(this, "最多上传9张图片");
             return;
         }
         mPickImageLauncher.launch("image/*");
@@ -84,7 +84,7 @@ public class StrategyPublishActivity extends BaseActivity<ActivityStrategyPublis
             @Override
             public void onSuccess(List<ScenicSpotVO> data) {
                 if (data == null || data.isEmpty()) {
-                    TravleToast.showToast(StrategyPublishActivity.this, "暂无景点");
+                    TravelToast.showToast(StrategyPublishActivity.this, "暂无景点");
                     return;
                 }
                 showSpotDialog(data);
@@ -92,7 +92,7 @@ public class StrategyPublishActivity extends BaseActivity<ActivityStrategyPublis
 
             @Override
             public void onError(String error) {
-                TravleToast.showToast(StrategyPublishActivity.this, "加载失败：" + error);
+                TravelToast.showToast(StrategyPublishActivity.this, "加载失败：" + error);
             }
         });
     }
@@ -112,7 +112,7 @@ public class StrategyPublishActivity extends BaseActivity<ActivityStrategyPublis
 
     private void addTag(String tagName) {
         if (mSelectedTags.contains(tagName)) {
-            TravleToast.showToast(this, "已添加该景点");
+            TravelToast.showToast(this, "已添加该景点");
             return;
         }
         mSelectedTags.add(tagName);
@@ -153,15 +153,15 @@ public class StrategyPublishActivity extends BaseActivity<ActivityStrategyPublis
         String content = mBinding.etContent.getText().toString().trim();
 
         if (title.isEmpty()) {
-            TravleToast.showToast(this, "请输入标题");
+            TravelToast.showToast(this, "请输入标题");
             return;
         }
         if (content.isEmpty()) {
-            TravleToast.showToast(this, "请输入内容");
+            TravelToast.showToast(this, "请输入内容");
             return;
         }
         if (mImageAdapter.getItemCount() == 0) {
-            TravleToast.showToast(this, "请至少添加一张图片");
+            TravelToast.showToast(this, "请至少添加一张图片");
             return;
         }
         //todo 发布逻辑
@@ -173,7 +173,7 @@ public class StrategyPublishActivity extends BaseActivity<ActivityStrategyPublis
         @Override
         public void onSuccess(List<ScenicSpotVO> data) {
             if (data == null || data.isEmpty()) {
-                TravleToast.showToast(StrategyPublishActivity.this, "暂无景点数据");
+                TravelToast.showToast(StrategyPublishActivity.this, "暂无景点数据");
                 return;
             }
 
@@ -182,7 +182,7 @@ public class StrategyPublishActivity extends BaseActivity<ActivityStrategyPublis
 
         @Override
         public void onError(String error) {
-            TravleToast.showToast(StrategyPublishActivity.this, "加载景点失败：" + error);
+            TravelToast.showToast(StrategyPublishActivity.this, "加载景点失败：" + error);
         }
     }
 
