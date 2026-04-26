@@ -3,6 +3,10 @@ package com.zzy.travle.data.model.reqdto;
 public class SearchSpotReqDTO {
     private String keyword;
 
+    public SearchSpotReqDTO(String keyword) {
+        this.keyword = keyword;
+    }
+
     public String getKeyword() {
         return keyword;
     }

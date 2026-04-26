@@ -91,8 +91,7 @@ public class SpotRepositoryImpl implements SpotRepository {
 
     @Override
     public Result<List<ScenicSpotVO>> searchScenicSpot(String keyword) {
-        SearchSpotReqDTO reqDTO = new SearchSpotReqDTO();
-        reqDTO.setKeyword(keyword);
+        SearchSpotReqDTO reqDTO = new SearchSpotReqDTO(keyword);
 
         Result<ScenicSpotListRespDto> result = NetworkHelper.executeCall(() -> spotApi.searchSpot(reqDTO));
 

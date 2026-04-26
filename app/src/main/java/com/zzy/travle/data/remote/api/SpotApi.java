@@ -6,6 +6,7 @@ import com.zzy.travle.data.model.respdto.ScenicSpotListRespDto;
 import com.zzy.travle.data.model.respdto.StrategyListRespDto;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -18,7 +19,7 @@ public interface SpotApi {
     Call<ApiResponse<ScenicSpotListRespDto>> getScenicSpotList();
 
     @POST("/spot/search")
-    Call<ApiResponse<ScenicSpotListRespDto>> searchSpot(SearchSpotReqDTO reqDTO);
+    Call<ApiResponse<ScenicSpotListRespDto>> searchSpot(@Body SearchSpotReqDTO reqDTO);
 
     @GET("/strategy/list")
     Call<ApiResponse<StrategyListRespDto>> getStrategyList();
