@@ -51,6 +51,9 @@ public abstract class BaseActivity<T extends ViewDataBinding>
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mBinding = null;
+        if (mBinding != null) {
+            mBinding.unbind();
+            mBinding = null;
+        }
     }
 }
