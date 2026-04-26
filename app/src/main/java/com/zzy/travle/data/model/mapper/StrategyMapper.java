@@ -6,6 +6,7 @@ import com.zzy.travle.util.TimeFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class StrategyMapper {
     public List<StrategyVO> mapList(List<StrategyDo> list) {
@@ -21,7 +22,12 @@ public class StrategyMapper {
             vo.setUserName(dto.getUserName());
             vo.setUserAvatar(dto.getUserAvatar());
 
-            vo.setImageUrls(dto.getImages());
+            Optional.ofNullable(dto.getImageUrls())
+                    .filter(imageList -> !imageList.isEmpty())
+                    .ifPresent(imageList -> {
+                        vo.setCover(imageList.get(0));
+                        vo.setImageUrls(imageList);
+                    });
             vo.setTags(dto.getTags());
 
             vo.setPublishTime(TimeFormatter.formatRelativeTimeText(dto.getPublishTime()));

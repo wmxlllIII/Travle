@@ -6,8 +6,7 @@ public class StrategyDo {
     private long id;
     private String title;
     private String summary;
-    private String cover;
-    private List<String> images;
+    private List<String> imageUrls;
     private String userName;
     private String userAvatar;
     private long publishTime;
@@ -40,20 +39,12 @@ public class StrategyDo {
         this.summary = summary;
     }
 
-    public String getCover() {
-        return cover;
+    public List<String> getImageUrls() {
+        return imageUrls;
     }
 
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
-
-    public List<String> getImages() {
-        return images;
-    }
-
-    public void setImages(List<String> images) {
-        this.images = images;
+    public void setImageUrls(List<String> imageUrls) {
+        this.imageUrls = imageUrls;
     }
 
     public String getUserName() {
@@ -118,11 +109,10 @@ public class StrategyDo {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", summary='" + summary + '\'' +
-                ", cover='" + cover + '\'' +
-                ", images=" + images +
+                ", imageUrls=" + imageUrls +
                 ", userName='" + userName + '\'' +
                 ", userAvatar='" + userAvatar + '\'' +
-                ", publishTime='" + publishTime + '\'' +
+                ", publishTime=" + publishTime +
                 ", tags=" + tags +
                 ", likeCount=" + likeCount +
                 ", commentCount=" + commentCount +

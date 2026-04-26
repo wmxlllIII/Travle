@@ -13,7 +13,7 @@ public class StrategyVO {
     // 内容
     private String title;
     private String summary;
-
+    private String cover;
     // 图片
     private List<String> imageUrls;
 
@@ -34,6 +34,14 @@ public class StrategyVO {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 
     public String getUserAvatar() {

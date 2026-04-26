@@ -1,5 +1,7 @@
 package com.zzy.travle.ui.adapter.viewholder;
 
+import android.util.Log;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -20,6 +22,7 @@ public class StrategyViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(StrategyVO vo, OnStrategyClickListener mListener) {
+        Log.d("wmx ", "bind: "+vo);
         mBinding.tvUsername.setText(vo.getUserName());
         mBinding.tvTime.setText(vo.getPublishTime());
 
@@ -32,11 +35,7 @@ public class StrategyViewHolder extends RecyclerView.ViewHolder {
         mBinding.tvSummary.setText(vo.getSummary());
 
         Glide.with(mBinding.ivCover)
-                .load(
-                        Optional.ofNullable(vo.getImageUrls())
-                                .map(list -> list.get(0))
-                                .orElse("")
-                )
+                .load(vo.getCover())
                 .into(mBinding.ivCover);
 
 //        StringBuilder tagBuilder = new StringBuilder();
